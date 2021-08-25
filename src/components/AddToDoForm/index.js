@@ -1,11 +1,26 @@
+import React from "react";
+
 import styles from "./AddToDoForm.module.css"
 
-const AddToDoForm = () => {
+const AddToDoForm = ({onAddElem}) => {
+
+    const [toDo, setToDo] = React.useState(``)
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault()
+        onAddElem(toDo)
+        setToDo(``)
+    }
+
+    const handleInputChange = (event) => {
+        setToDo(event.target.value)
+    }
+
     return (
-        <div className={styles.addToDoForm}>
-            <input className={styles.enterInput} name="todo"/>
+        <form className={styles.addToDoForm} onSubmit={handleFormSubmit}>
+            <input className={styles.enterInput} name="todo" value={toDo} onChange={handleInputChange}/>
             <button className={styles.button}>Add Elem</button>
-        </div>
+        </form>
     )
 }
 
