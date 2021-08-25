@@ -5,7 +5,11 @@ const CustomButton = () => {
 
     return(
         <>
-            <button></button>
+            <button>First button</button>
+            <button>Second button</button>
+            <a href="https://google.com">link</a>
         </>
     )
 }
+
+export default CustomButton
