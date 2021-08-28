@@ -10,33 +10,33 @@ import React from "react";
 // }
 // class LifecycleShort extends ListItem
 
-// class LifecycleShort extends React.Component{
-//
-//     state = {
-//         value:`test data`
-//     }
-//
-//     componentDidMount() {
-//         console.log(`componentDidMount`)
-//     }
-//
-//     componentDidUpdate() {
-//         console.log(`componentDidUpdate`)
-//     }
-//
-//     handleChangeValue = () => {
-//         this.setState({value:`new data`})
-//     }
-//
-//     render() {
-//         return(
-//             <>
-//                 <button onClick={this.handleChangeValue}>Change value</button>
-//                 <div>{this.state.value}</div>
-//             </>
-//         )
-//     }
-// }
+class LifecycleShort extends React.Component{
+
+    state = {
+        value:`test data`
+    }
+
+    componentDidMount() {
+        console.log(`componentDidMount`)
+    }
+
+    componentDidUpdate() {
+        console.log(`componentDidUpdate`)
+    }
+
+    handleChangeValue = () => {
+        this.setState({value:`new data`})
+    }
+
+    render() {
+        return(
+            <>
+                <button onClick={this.handleChangeValue}>Change value</button>
+                <div>{this.state.value}</div>
+            </>
+        )
+    }
+}
 
 const LifeCycleFunctional = () => {
 
