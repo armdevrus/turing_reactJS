@@ -1,7 +1,7 @@
 import React from "react"
 import {Link, Route, Switch} from "react-router-dom";
 
-import Todo from "./pages/ToDo/ToDo";
+import ToDo from "./pages/ToDo/ToDo";
 
 class App extends React.Component {
 
@@ -24,7 +24,7 @@ class App extends React.Component {
                        <h1>Test page!</h1>
                    </Route>
                    <Route path="/">
-                       <Todo/>
+                       <ToDo/>
                    </Route>
                </Switch>
            </>
