@@ -1,6 +1,7 @@
 import React from "react";
 
 import styles from "./AddToDoForm.module.css"
+import Button from "../Button/Button";
 
 const AddToDoForm = ({onAddElem}) => {
 
@@ -19,7 +20,8 @@ const AddToDoForm = ({onAddElem}) => {
     return (
         <form className={styles.addToDoForm} onSubmit={handleFormSubmit}>
             <input className={styles.enterInput} name="todo" value={toDo} onChange={handleInputChange}/>
-            <button className={styles.button}>Add Elem</button>
+            {/*<button className={styles.button}>Add Elem</button>*/}
+            <Button text="Add Elem"/>
         </form>
     )
 }

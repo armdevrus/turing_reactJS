@@ -8,19 +8,6 @@
     max-width: 250px;
     height: 130px;
 }
-.button {
-    height: 40px;
-    font-size: 16px;
-    border-radius: 8px;
-    background-color: blue;
-    color: white;
-    border: 1px solid  ;
-    cursor: pointer;
-}
-
-.button:active{
-    background-color: darkblue;
-}
 
 .enterInput {
     height: 40px;

@@ -4,12 +4,14 @@ import {BrowserRouter} from "react-router-dom";
 
 import './index.css';
 import App from './App';
+import Optimisation from "./lifecoding/Optimisation";
 import reportWebVitals from './reportWebVitals';
+import ListPrompt from "./homework/5week3day/5week3day";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <App/>
+          <ListPrompt/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

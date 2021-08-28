@@ -1,7 +1,7 @@
 import React from "react"
 import {Link, Route, Switch} from "react-router-dom";
 
-import Todo from "./pages/ToDo";
+import Todo from "./pages/ToDo/ToDo";
 
 class App extends React.Component {
 
@@ -17,7 +17,7 @@ class App extends React.Component {
                    <Link to="/test">Test page</Link>
                </div>
                <Switch>
-                   {isAdmin && <Route path="/blocked_page">
+                   <Route path="/blocked_page">
                        <h1>Blocked page!</h1>
                    </Route>}
                    <Route path="/test">
