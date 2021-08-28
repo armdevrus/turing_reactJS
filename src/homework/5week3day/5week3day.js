@@ -38,10 +38,10 @@ const ListPrompt = () => {
         setElements([...elements.slice(0, index), {id: elements.length + 3, name: prompt('')},...elements.slice(index)])
     }
     const handleDeleteElementAfter = () => {
-        setElements([...elements.splice(0,elements.length - 1)])
+        setElements([...elements.splice(0,elements.length - 1), {id: elements.length - 1}])
     }
     const handleDeleteElementBefore = () => {
-        setElements([...elements.splice(1,elements.length)])
+        setElements([...elements.splice(1,elements.length),{id: elements.length - 2}])
     }
     let elemMiddle;
     const handleDeleteElementMiddle = () => {
