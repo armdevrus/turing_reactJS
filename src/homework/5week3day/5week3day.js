@@ -29,19 +29,21 @@ const ListPrompt = () => {
     const index = elements.length / 2
 
     const handleAddPromptAfter = () => {
-        setElements([...elements, {id: elements.length + 1, name: prompt('')}])
+        let idPromptAfter = "100a"
+        setElements([...elements, {id: idPromptAfter + 1, name: prompt('')}])
     }
     const handleAddPromptBefore = () => {
-        setElements([{id: elements.length + 2, name: prompt('')},...elements])
+        let idPromptBefore = "200b"
+        setElements([{id: idPromptBefore + 1, name: prompt('')},...elements])
     }
     const handleAddPromptMiddle = () => {
-        setElements([...elements.slice(0, index), {id: elements.length + 3, name: prompt('')},...elements.slice(index)])
+        setElements([...elements.slice(0, index), {id: elements.length + "3c", name: prompt('')},...elements.slice(index)])
     }
     const handleDeleteElementAfter = () => {
-        setElements([...elements.splice(0,elements.length - 1), {id: elements.length - 1}])
+        setElements([...elements.splice(0,elements.length - 1), {id: elements.length + "4d"}])
     }
     const handleDeleteElementBefore = () => {
-        setElements([...elements.splice(1,elements.length),{id: elements.length - 2}])
+        setElements([...elements.splice(1,elements.length),{id: elements.length + "5e"}])
     }
     let elemMiddle;
     const handleDeleteElementMiddle = () => {
