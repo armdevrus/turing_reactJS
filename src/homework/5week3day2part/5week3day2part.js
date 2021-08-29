@@ -1,14 +1,19 @@
 import React from "react";
 
-import s from "./5week3day2part.module.css"
+import styles from "./5week3day2part.module.css"
 
 const AddText = () => {
+
+    const handleAddText = () => {
+
+    }
+
     return(
-        <div className={s.item}>
+        <div className={styles.item}>
             <p>Add text here</p>
             <textarea></textarea>
             <div>
-                <button>Add text</button>
+                <button onClick={handleAddText}>Add text</button>
             </div>
         </div>
     )
