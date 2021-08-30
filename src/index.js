@@ -11,7 +11,7 @@ import ListPrompt from "./homework/5week3day/5week3day";
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <ListPrompt/>
+          <App/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

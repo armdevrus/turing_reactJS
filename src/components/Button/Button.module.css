@@ -6,6 +6,7 @@
     color: white;
     border: 1px solid  ;
     cursor: pointer;
+    margin: 0 5px 0 5px;
 }
 .buttonImportant {
     background-color: red;
