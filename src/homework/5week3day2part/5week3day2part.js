@@ -30,15 +30,23 @@ const AddText = () => {
 
 const CounterSymbol = () => {
 
+    const [element, setElement] = React.useState('')
 
-    const handleShowSymbols = () => {
-        alert()
+    const handleOnChangeValue = (event) => {
+        setElement(event.target.value)
+        console.log(element)
+    }
+
+    // const [value, setValue] = React.useState('')
+
+    const handleOnShowSymbols = () => {
+        alert(element.length)
     }
 
     return(
         <>
-            <input type="text"/>
-            <button onClick={handleShowSymbols}>Show symbols</button>
+            <input type="text" onChange={handleOnChangeValue} value={element}/>
+            <button onClick={handleOnShowSymbols}>Show symbols</button>
         </>
 
     )
