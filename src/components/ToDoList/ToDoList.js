@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./ToDoList.module.css"
-import Button from "../Button/Button";
+
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
 
-const ToDoList = ({list,deleteElem}) => {
+const ToDoList = ({list,deleteElem, saveElem}) => {
 
     return (
         <>
@@ -16,7 +16,7 @@ const ToDoList = ({list,deleteElem}) => {
                             index={index}
                             elem={elem}
                             onDelete={() => deleteElem(index)}
-                            onSave={() => console.log(`onSave`)}/>
+                            onSave={(text) => saveElem(index, text)}/>
                     )
                 }
             </ul>

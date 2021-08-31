@@ -13,9 +13,17 @@ const Todo = () => {
     }
 
     const deleteElemToDoList = (index) => {
-        // console.log(`deleteElemToDoList`, index,...list.slice(index), ':', ...list.slice(index, list.length + 1))
         setList([
             ...list.slice(0,index),
+            ...list.slice(index + 1, list.length)
+        ])
+    }
+
+    const saveElemToDoList = (index, text) => {
+        console.log(index, text)
+        setList([
+            ...list.slice(0,index),
+            text,
             ...list.slice(index + 1, list.length)
         ])
     }
@@ -24,7 +32,7 @@ const Todo = () => {
         <>
             <div className={styles.container}>
                 <AddToDoForm onAddElem={addElemToList}/>
-                <ToDoList list={list} deleteElem={deleteElemToDoList}/>
+                <ToDoList list={list} deleteElem={deleteElemToDoList} saveElem={saveElemToDoList}/>
             </div>
         </>
     )
