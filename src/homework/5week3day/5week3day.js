@@ -48,7 +48,7 @@ const ListPrompt = () => {
     let elemMiddle;
     const handleDeleteElementMiddle = () => {
         elemMiddle = [...elements.splice(elements.length/2,1)]
-        setElements([...elements])
+        setElements(elements)
     }
     console.log([...elements])
     return(

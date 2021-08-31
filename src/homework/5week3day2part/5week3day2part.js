@@ -4,14 +4,23 @@ import styles from "./5week3day2part.module.css"
 
 const AddText = () => {
 
-    const handleAddText = () => {
+    const [element, setElement] = React.useState("")
 
+    const handleOnChangeElement = (event) => {
+       setElement(event.target.value)
+        console.log(event)
+    }
+
+    const [valueText, setValueText] = React.useState("")
+
+    const handleAddText = () => {
+        setValueText(element)
     }
 
     return(
         <div className={styles.item}>
-            <p>Add text here</p>
-            <textarea></textarea>
+            <p>{valueText}</p>
+            <textarea onChange={handleOnChangeElement} value={element}/>
             <div>
                 <button onClick={handleAddText}>Add text</button>
             </div>
@@ -19,4 +28,20 @@ const AddText = () => {
     )
 }
 
-export default AddText
+const CounterSymbol = () => {
+
+
+    const handleShowSymbols = () => {
+        alert()
+    }
+
+    return(
+        <>
+            <input type="text"/>
+            <button onClick={handleShowSymbols}>Show symbols</button>
+        </>
+
+    )
+}
+
+export default CounterSymbol
