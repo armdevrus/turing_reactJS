@@ -8,11 +8,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import ListPrompt from "./homework/5week3day/5week3day";
 import CounterForm from "./lifecoding/AdditionalHooks";
+import HookStateCallback from "./lifecoding/HookStateCallback";
+import Portal from "./lifecoding/Portal";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <App/>
+          <Portal/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

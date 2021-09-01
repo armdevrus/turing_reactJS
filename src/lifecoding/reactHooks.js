@@ -25,7 +25,9 @@ class LifecycleShort extends React.Component{
     }
 
     handleChangeValue = () => {
-        this.setState({value:`new data`})
+        // this.setState({value:`new data`})
+        this.setState(state => ({value: state.value + 1}))
+        this.setState({value: this.state.value + 1})
     }
 
     render() {
