@@ -99,20 +99,32 @@ const FormInputButtonList = () => {
     const handleOnSubmitAddText = (event) => {
         event.preventDefault()
         setElements([...elements,{id: elements.length + 1, name: valueText}])
-        console.log(elements)
+        setValueText('')
+        // console.log(elements)
+    }
+
+    const [id, setId] = React.useState('')
+
+    const handleOnChangeDeleteId = (event) => {
+        setId(event.target.value)
+    }
+
+    const handleOnChangeDeleteForm = (event) => {
+        event.preventDefault()
+
     }
 
     return(
         <>
             <form onSubmit={handleOnSubmitAddText}>
-                <input type="text" onChange={handleOnChangeSomeText}/>
+                <input type="text" onChange={handleOnChangeSomeText} value={valueText}/>
                 <button>Add paragraph</button>
                 <ul>
                     {elements.map(elem => <li key={elem.id}>{elem.name}</li>)}
                 </ul>
             </form>
-            <form>
-                <input type="number"/>
+            <form onSubmit={handleOnChangeDeleteForm}>
+                <input type="number" onChange={handleOnChangeDeleteId} value={id} />
                 <button>Delete element</button>
             </form>
         </>
