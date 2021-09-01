@@ -52,4 +52,66 @@ const CounterSymbol = () => {
     )
 }
 
-export default CounterSymbol
+const ShowSumTwoNumbers = () => {
+
+    const [numOne, setNumOne] = React.useState('')
+
+    const handleOnChangeNumOne = (event) => {
+        setNumOne(event.target.value)
+        console.log(numOne)
+    }
+
+    const [numTwo, setNumTwo] = React.useState('')
+
+    const handleOnChangeNumTwo = (event) => {
+        setNumTwo(event.target.value)
+        console.log(numTwo)
+    }
+
+    const handleOnClickSumNumbers = () => {
+        alert(Number(numOne) + Number(numTwo))
+    }
+
+    return(
+        <>
+            <input type="number" onChange={handleOnChangeNumOne} value={numOne}/>
+            <input type="number" onChange={handleOnChangeNumTwo} value={numTwo}/>
+            <button onClick={handleOnClickSumNumbers}>Show the sum of two numbers</button>
+        </>
+    )
+}
+
+
+const FormInputButtonList = () => {
+
+    const [valueText, setValueText] = React.useState('')
+
+    const handleOnChangeSomeText = (event) => {
+        setValueText(event.target.value)
+    }
+
+    const [elements, setElements] = React.useState([
+        {id: 1, name: 'First text'},
+        {id: 2, name: 'Second text'},
+        {id: 3, name: 'Third text'}
+        ])
+
+    const handleOnSubmitAddText = (event) => {
+        event.preventDefault()
+        setElements([...elements,{id: elements.length + 1, name: valueText}])
+        console.log(elements)
+    }
+
+    return(
+        <form onSubmit={handleOnSubmitAddText}>
+            <input type="text" onChange={handleOnChangeSomeText}/>
+            <button>Add paragraph</button>
+            <ul>
+                {elements.map(elem => <li key={elem.id}>{elem.name}</li>)}
+            </ul>
+        </form>
+
+    )
+}
+
+export default FormInputButtonList
