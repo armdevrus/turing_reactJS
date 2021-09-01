@@ -10,15 +10,13 @@ const ToDoList = ({list,deleteElem, saveElem}) => {
             <h3>To Do List:</h3>
             <ul className={styles.toDoList}>
 
-                {list.map((elem, index) =>
+                {list.map(elem =>
                         <ToDoListItem
-                            key={index}
-                            index={index}
+                            key={elem.id}
+                            // index={index}
                             elem={elem}
-                            onDelete={() => deleteElem(index)}
-                            onSave={(text) => saveElem(index, text)}/>
-                    )
-                }
+                            onDelete={() => deleteElem(elem.id)}
+                            onSave={(text) => saveElem(elem.id, text)}/>)}
             </ul>
         </>
     )

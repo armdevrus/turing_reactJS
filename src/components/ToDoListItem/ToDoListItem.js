@@ -2,14 +2,17 @@ import React from "react";
 import styles from "../ToDoList/ToDoList.module.css";
 import Button from "../Button/Button";
 
-const ToDoListItem = ({index, elem, onDelete, onSave}) => {
+const ToDoListItem = ({elem, onDelete, onSave}) => {
 
     const [isEditing, setIsEditing] = React.useState(false)
-    const [text, setText] = React.useState(elem)
+    const [text, setText] = React.useState(elem.value)
 
     const handleEditClick = () => {
         setIsEditing(true)
     }
+    React.useEffect(()=>{
+        console.log(elem)
+    },[])
 
     const handleOnChangeValue = (event) => {
         setText(event.target.value)
@@ -17,7 +20,7 @@ const ToDoListItem = ({index, elem, onDelete, onSave}) => {
 
     const handleCancelClick = () => {
         setIsEditing(false)
-        setText(elem)
+        setText(elem.value)
     }
 
     const handleSaveClick = () => {
@@ -30,12 +33,12 @@ const ToDoListItem = ({index, elem, onDelete, onSave}) => {
             {
                 isEditing ?
                    <>
-                       {index + 1}: <input value={text} onChange={handleOnChangeValue}/>
+                       id: {elem.id}: <input value={text} onChange={handleOnChangeValue}/>
                        <Button text="Cancel" isImportant={true} onClick={handleCancelClick}/>
                        <Button text="Save" onClick={handleSaveClick}/>
                    </>:
                    <>
-                       <span className={styles.toDoListText}>{index + 1}: {elem}</span>
+                       <span className={styles.toDoListText}>id: {elem.id}: {elem.value}</span>
                        <Button text="Delete" isImportant={true} onClick={onDelete}/>
                        <Button text="Edit" isImportant={false} onClick={handleEditClick}/>
                    </>

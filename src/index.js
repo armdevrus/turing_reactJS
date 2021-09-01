@@ -14,7 +14,7 @@ import Portal from "./lifecoding/Portal";
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <Portal/>
+          <App/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

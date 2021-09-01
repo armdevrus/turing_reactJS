@@ -23,12 +23,12 @@ const Main = () => {
         return ReactDOM.createPortal(<SomeBlock colour={colour}/>, bodyElem)},[colour])
 
     return(
-        <div id="main">
-            {portalElem}
+        <div id="main" style={{border:'1px solid black'}} onClick={handleButtonClick}>
             <div>
-                <SomeBlock colour={colour}/>
+                {portalElem}
+                {/*<SomeBlock colour={colour}/>*/}
             </div>
-            <button onClick={handleButtonClick}>
+            <button >
                 Click me
             </button>
         </div>

@@ -3,29 +3,27 @@ import styles from "./ToDo.module.css"
 import AddToDoForm from "../../components/AddToDoForm/AddToDoForm";
 import ToDoList from "../../components/ToDoList/ToDoList";
 
+let newId = 1
+
 const Todo = () => {
 
     const [list, setList] = React.useState([])
 
+    console.log({list})
+
     const addElemToList = (elem) => {
-        console.log("addElemToList: ", elem)
-        setList([...list, elem])
+        setList([...list, {id: newId, value: elem}])
+        // newId = newId + 1
     }
 
-    const deleteElemToDoList = (index) => {
-        setList([
-            ...list.slice(0,index),
-            ...list.slice(index + 1, list.length)
-        ])
+    const deleteElemToDoList = (id) => {
+        // const newList = list.filter(value => value.id !== id)
+        setList(list.filter(value => value.id !== id))
     }
 
-    const saveElemToDoList = (index, text) => {
-        console.log(index, text)
-        setList([
-            ...list.slice(0,index),
-            text,
-            ...list.slice(index + 1, list.length)
-        ])
+    const saveElemToDoList = (id, text) => {
+        // const newList = list.map(elem => elem.id === id ? {...elem, value: text} : elem)
+        setList(list.map(elem => elem.id === id ? {...elem, value: text} : elem))
     }
 
     return(
