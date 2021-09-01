@@ -103,14 +103,19 @@ const FormInputButtonList = () => {
     }
 
     return(
-        <form onSubmit={handleOnSubmitAddText}>
-            <input type="text" onChange={handleOnChangeSomeText}/>
-            <button>Add paragraph</button>
-            <ul>
-                {elements.map(elem => <li key={elem.id}>{elem.name}</li>)}
-            </ul>
-        </form>
-
+        <>
+            <form onSubmit={handleOnSubmitAddText}>
+                <input type="text" onChange={handleOnChangeSomeText}/>
+                <button>Add paragraph</button>
+                <ul>
+                    {elements.map(elem => <li key={elem.id}>{elem.name}</li>)}
+                </ul>
+            </form>
+            <form>
+                <input type="number"/>
+                <button>Delete element</button>
+            </form>
+        </>
     )
 }
 
