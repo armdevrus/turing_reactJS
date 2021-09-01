@@ -16,7 +16,7 @@ const List = () => {
         </>
     )
 }
-
+let idForFunc = 5
 const ListPrompt = () => {
 
     const [elements, setElements] = React.useState([
@@ -28,33 +28,31 @@ const ListPrompt = () => {
 
     const index = elements.length / 2
 
-    let idForFunc = 5
     const handleAddPromptAfter = () => {
         idForFunc += 1
-        // console.log(idForPromptAfter)
         setElements([...elements, {id: idForFunc, name: prompt('')}])
     }
     const handleAddPromptBefore = () => {
-        idForFunc += 2
+        idForFunc += 1
         setElements([{id: idForFunc, name: prompt('')},...elements])
     }
     const handleAddPromptMiddle = () => {
-        idForFunc += 3
+        idForFunc += 1
         setElements([...elements.slice(0, index), {id: idForFunc, name: prompt('')},...elements.slice(index)])
     }
     const handleDeleteElementAfter = () => {
-        idForFunc += 4
+        idForFunc += 1
         setElements([...elements.splice(0,elements.length - 1), {id: idForFunc}])
     }
     const handleDeleteElementBefore = () => {
-        idForFunc += 5
+        idForFunc += 1
         setElements([...elements.splice(1,elements.length),{id: idForFunc}])
     }
     let elemMiddle;
     const handleDeleteElementMiddle = () => {
-        idForFunc += 6
-        elemMiddle = [...elements.splice(elements.length/2,1)]
-        setElements([...elements],{id: idForFunc})
+        idForFunc += 1
+        elemMiddle = [...elements.splice(elements.length/2,1), {id:idForFunc}]
+        setElements([...elements])
     }
     console.log([...elements])
     return(
@@ -73,4 +71,5 @@ const ListPrompt = () => {
 }
 
 export default ListPrompt
+
 
