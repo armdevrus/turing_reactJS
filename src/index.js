@@ -10,11 +10,12 @@ import reportWebVitals from './reportWebVitals';
 import CounterForm from "./lifecoding/AdditionalHooks";
 import HookStateCallback from "./lifecoding/HookStateCallback";
 import Portal from "./lifecoding/Portal";
+import Requests from "./lifecoding/Requests";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <App/>
+          <Requests/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
