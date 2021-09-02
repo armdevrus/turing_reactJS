@@ -107,11 +107,18 @@ const FormInputButtonList = () => {
 
     const handleOnChangeDeleteId = (event) => {
         setId(event.target.value)
+        // console.log(id)
     }
 
     const handleOnChangeDeleteForm = (event) => {
         event.preventDefault()
-
+        setElements(elements.filter((elem => {
+            if (elem.id != id) {
+                return elem
+            }
+        })))
+        setId('')
+        event.target.reset()
     }
 
     return(

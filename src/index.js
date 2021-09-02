@@ -8,11 +8,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ListPrompt from "./homework/5week3day/5week3day";
 import AddText from "./homework/5week3day2part/5week3day2part";
+import FormInputButtonList from "./homework/5week3day2part/5week3day2part";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <AddText/>
+          <FormInputButtonList/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
