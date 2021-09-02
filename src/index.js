@@ -15,7 +15,7 @@ import Requests from "./lifecoding/Requests";
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <Requests/>
+          <App/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
