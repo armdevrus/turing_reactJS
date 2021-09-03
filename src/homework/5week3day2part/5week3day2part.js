@@ -225,4 +225,36 @@ const SizeText = () => {
     )
 }
 
-export default SizeText
+const AddOptionForm = () => {
+
+    const [input, setInput] = React.useState('')
+    const handleOnChangeText = (event) => {
+        setInput(event.target.value)
+    }
+    // console.log(input)
+
+    const handleOnSubmitAddForm = (event) => {
+        event.preventDefault()
+        setElements([...elements, {id: elements.length + 1, name: {input}}])
+        console.log(...elements)
+    }
+
+    const [elements, setElements] = React.useState([
+        {id: 1, name: "Ivan"}
+    ])
+
+    return(
+        <form onSubmit={handleOnSubmitAddForm}>
+            <input type="text" onChange={handleOnChangeText} value={input}/>
+            <button>Add option</button>
+            <div>
+                <select>
+                    {elements.map(elem => <option key={elem.id}>{elem.name}</option>)}
+                </select>
+            </div>
+        </form>
+    )
+}
+
+export default AddOptionForm
+
