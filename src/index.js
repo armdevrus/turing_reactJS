@@ -11,11 +11,12 @@ import CounterForm from "./lifecoding/AdditionalHooks";
 import HookStateCallback from "./lifecoding/HookStateCallback";
 import Portal from "./lifecoding/Portal";
 import Requests from "./lifecoding/Requests";
+import UserList from "./lifecoding/HOC";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <App/>
+          <UserList/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
