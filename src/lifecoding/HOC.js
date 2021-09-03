@@ -10,6 +10,37 @@ const AddUserForm = () => {
         const name = event.target.userName.value
         const age = event.target.userAge.value
 
+        console.log('handleFormSubmit')
+
+        // false || false = false
+        // true || false = true
+        // false || true = true
+        // true || true = true
+
+        // false && false = false
+        // true && false = false
+        // false && true = false
+        // true && true = true
+
+        // !(false && false) = true
+        // !(true && false) = true
+        // !(false && true) = true
+        // !(true && true) = false
+
+        // !false || !false = true
+        // !true || !false = true
+        // !false || !true = true
+        // !true || !true = false
+
+        if (!(name && age)) {
+            console.log("Name and age doesn't exist 1")
+            return
+        }
+        if (!name || !age) {
+            console.log("Name and age doesn't exist 2")
+            return
+        }
+
         if (!(name && age)) return
 
         dataSource.addUser({name, age})
@@ -30,7 +61,7 @@ const AddUserForm = () => {
     )
 }
 
-const UserList = () => {
+const UsersList = () => {
 
     const [users, setUsers] = React.useState(dataSource.getUsers())
 
@@ -87,14 +118,12 @@ const dataSourceWrapper = (WrappedComponent) => {
 }
 
 const UsersCountSimple = ({users}) => {
-
     return (
         <div>{users.length}</div>
     )
 }
 
 const UsersListSimple = ({users}) => {
-
     return (
         <ul>
             {users.map((user, index) => (
@@ -113,7 +142,7 @@ const Main = () => {
     return (
         <>
             <AddUserForm/>
-            <UserList/>
+            <UsersList/>
             <UsersCount/>
             <br/>
             <br/>

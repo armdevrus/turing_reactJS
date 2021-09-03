@@ -16,7 +16,7 @@ import UserList from "./lifecoding/HOC";
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <UserList/>
+          <App/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

@@ -3,14 +3,14 @@ import React from "react";
 import styles from "./AddToDoForm.module.css"
 import Button from "../Button/Button";
 
-const AddToDoForm = ({onAddElem}) => {
+const HandleForm = ({onClick}) => {
 
     const [toDo, setToDo] = React.useState(``)
 
     const handleFormSubmit = (event) => {
         event.preventDefault()
-        onAddElem(toDo)
-        setToDo(``)
+        onClick(toDo)
+        setToDo('')
     }
 
     const handleInputChange = (event) => {
@@ -26,4 +26,4 @@ const AddToDoForm = ({onAddElem}) => {
     )
 }
 
-export default AddToDoForm
+export default HandleForm

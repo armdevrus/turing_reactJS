@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ToDo.module.css"
-import AddToDoForm from "../../components/AddToDoForm/AddToDoForm";
+import HandleForm from "../../components/HandleForm/HandleForm";
 import ToDoList from "../../components/ToDoList/ToDoList";
 
 let newId = 1
@@ -29,7 +29,7 @@ const Todo = () => {
     return(
         <>
             <div className={styles.container}>
-                <AddToDoForm onAddElem={addElemToList}/>
+                <HandleForm onClick={addElemToList}/>
                 <ToDoList list={list} deleteElem={deleteElemToDoList} saveElem={saveElemToDoList}/>
             </div>
         </>
