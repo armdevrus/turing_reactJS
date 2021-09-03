@@ -235,23 +235,20 @@ const AddOptionForm = () => {
 
     const handleOnSubmitAddForm = (event) => {
         event.preventDefault()
-        setElements([...elements, {id: elements.length + 1, name: {input}}])
-        console.log(...elements)
+        setElements([...elements, {id: elements.length + 1, name: input}])
+        console.log(elements)
     }
 
-    const [elements, setElements] = React.useState([
-        {id: 1, name: "Ivan"}
-    ])
+    const [elements, setElements] = React.useState([])
 
     return(
         <form onSubmit={handleOnSubmitAddForm}>
             <input type="text" onChange={handleOnChangeText} value={input}/>
             <button>Add option</button>
-            <div>
+            <br/>
                 <select>
                     {elements.map(elem => <option key={elem.id}>{elem.name}</option>)}
                 </select>
-            </div>
         </form>
     )
 }
