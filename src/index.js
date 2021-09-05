@@ -9,11 +9,12 @@ import reportWebVitals from './reportWebVitals';
 import ListPrompt from "./homework/5week3day/5week3day";
 import AddText from "./homework/5week3day2part/5week3day2part";
 import AddOptionForm from "./homework/5week3day2part/5week3day2part";
+import RefComponent from "./homework/6week1day/6week1day";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          <AddOptionForm/>
+          <RefComponent/>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
