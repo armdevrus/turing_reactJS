@@ -1,9 +1,12 @@
 import React from "react";
-import styles from "./ToDoList.module.css"
 
+import styles from "./ToDoList.module.css"
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
+import {useSelector} from "react-redux";
 
 const ToDoList = ({list,deleteElem, saveElem}) => {
+
+    const storeList = useSelector((state) => state.ToDo.list)
 
     return (
         <>

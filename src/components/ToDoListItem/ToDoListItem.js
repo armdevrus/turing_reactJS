@@ -7,12 +7,13 @@ const ToDoListItem = ({elem, onDelete, onSave}) => {
     const [isEditing, setIsEditing] = React.useState(false)
     const [text, setText] = React.useState(elem.value)
 
-    const handleEditClick = () => {
-        setIsEditing(true)
-    }
     React.useEffect(()=>{
         console.log(elem)
     },[])
+
+    const handleEditClick = () => {
+        setIsEditing(true)
+    }
 
     const handleOnChangeValue = (event) => {
         setText(event.target.value)

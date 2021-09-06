@@ -2,14 +2,17 @@ import React from "react";
 import styles from "./ToDo.module.css"
 import HandleForm from "../../components/HandleForm/HandleForm";
 import ToDoList from "../../components/ToDoList/ToDoList";
+import {useSelector} from "react-redux";
+
 
 let newId = 1
 
 const Todo = () => {
 
-    const [list, setList] = React.useState([])
+    const storeList = useSelector((state) => state.ToDo.list)
+    console.log({storeList})
 
-    console.log({list})
+    const [list, setList] = React.useState([{id: 0, value:"First initial record"}])
 
     const addElemToList = (elem) => {
         setList([...list, {id: newId, value: elem}])
@@ -27,12 +30,11 @@ const Todo = () => {
     }
 
     return(
-        <>
             <div className={styles.container}>
                 <HandleForm onClick={addElemToList}/>
                 <ToDoList list={list} deleteElem={deleteElemToDoList} saveElem={saveElemToDoList}/>
+                <ToDoList list={storeList} deleteElem={deleteElemToDoList} saveElem={saveElemToDoList}/>
             </div>
-        </>
     )
 }
 

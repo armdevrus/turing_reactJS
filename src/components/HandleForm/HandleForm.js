@@ -20,7 +20,6 @@ const HandleForm = ({onClick}) => {
     return (
         <form className={styles.addToDoForm} onSubmit={handleFormSubmit}>
             <input className={styles.enterInput} name="todo" value={toDo} onChange={handleInputChange}/>
-            {/*<button className={styles.button}>Add Elem</button>*/}
             <Button text="Add Elem"/>
         </form>
     )
