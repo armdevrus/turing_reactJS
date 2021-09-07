@@ -21,7 +21,10 @@ ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
-                <App/>
+                <>
+                    <Counter/>
+                    {/*<CounterShow/>*/}
+                </>
             </BrowserRouter>
         </Provider>
     </React.StrictMode>,
