@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import {Link, Route, Switch} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ToDo from "./pages/ToDo/ToDo";
+
+class App extends React.Component {
+
+    render() {
+        const isAdmin  = true
+        return (
+           <>
+               <h1>APP JS</h1>
+               <div>
+                   <Link to="/">Open ToDo page</Link>
+               </div>
+               <div>
+                   <Link to="/test">Test page</Link>
+               </div>
+               <Switch>
+                   <Route path="/blocked_page">
+                       <h1>Blocked page!</h1>
+                   </Route>}
+                   <Route path="/test">
+                       <h1>Test page!</h1>
+                   </Route>
+                   <Route path="/">
+                       <ToDo/>
+                   </Route>
+               </Switch>
+           </>
+        )
+    }
 }
 
-export default App;
+export default App
