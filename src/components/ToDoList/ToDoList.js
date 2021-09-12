@@ -1,25 +1,33 @@
 import React from "react";
+import {useSelector, useDispatch} from "react-redux";
 
 import styles from "./ToDoList.module.css"
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
-import {useSelector} from "react-redux";
+import {deleteElem, updateElem} from "../../slices/ToDoSlice";
 
-const ToDoList = ({list,deleteElem, saveElem}) => {
+const ToDoList = () => {
 
-    const storeList = useSelector((state) => state.ToDo.list)
+    const dispatch = useDispatch()
+
+    const list = useSelector((state) => state.ToDo.list)
+
+    const deleteElemToDoList = (id) => () => {
+        dispatch(deleteElem(id))
+    }
+
+    const saveElemToDoList = (id) => (text) => {
+        dispatch(updateElem({id: id, value: text}))
+    }
 
     return (
         <>
             <h3>To Do List:</h3>
             <ul className={styles.toDoList}>
-
                 {list.map(elem =>
-                        <ToDoListItem
-                            key={elem.id}
-                            // index={index}
-                            elem={elem}
-                            onDelete={() => deleteElem(elem.id)}
-                            onSave={(text) => saveElem(elem.id, text)}/>)}
+                    <ToDoListItem key={elem.id}
+                                  elem={elem}
+                                  onDelete={deleteElemToDoList(elem.id)}
+                                  onSave={saveElemToDoList(elem.id)}/>)}
             </ul>
         </>
     )

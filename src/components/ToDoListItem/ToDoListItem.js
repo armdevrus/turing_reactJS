@@ -1,4 +1,5 @@
 import React from "react";
+
 import styles from "../ToDoList/ToDoList.module.css";
 import Button from "../Button/Button";
 
@@ -6,10 +7,6 @@ const ToDoListItem = ({elem, onDelete, onSave}) => {
 
     const [isEditing, setIsEditing] = React.useState(false)
     const [text, setText] = React.useState(elem.value)
-
-    React.useEffect(()=>{
-        console.log(elem)
-    },[])
 
     const handleEditClick = () => {
         setIsEditing(true)
