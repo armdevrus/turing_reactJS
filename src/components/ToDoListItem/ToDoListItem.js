@@ -22,8 +22,8 @@ const ToDoListItem = ({elem, onDelete, onSave}) => {
     }
 
     const handleSaveClick = () => {
+        setIsEditing(false)
         onSave(text)
-        handleCancelClick()
     }
 
     return(
