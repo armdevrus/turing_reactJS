@@ -23,7 +23,7 @@ const ImagesGallery = () => {
         if (response.ok) {
             const result = await response.json()
             setImages(result.hits)
-            setPages(Math.ceil(result.total / PER_PAGE))
+            setPages(Math.ceil(result.totalHits / PER_PAGE))
         }
     }
 
@@ -40,7 +40,7 @@ const ImagesGallery = () => {
             <h1>Images Gallery</h1>
             <HandleForm onClick={getImages}/>
             {images.map((image, index) => <img key={index} src={image.previewURL}/>)}
-            <Pagination pages={pages} changePage={handleOnChangePage}/>
+            <Pagination maxPage={pages} changePage={handleOnChangePage}/>
         </>
     )
 }
