@@ -23,14 +23,13 @@ ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-            <BrowserRouter>
-                {/*<CounterShow/>*/}
+                <BrowserRouter>
                     <App/>
-            </BrowserRouter>
-        </PersistGate>
-    </Provider>
-</React.StrictMode>,
-document.getElementById('root')
+                </BrowserRouter>
+            </PersistGate>
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

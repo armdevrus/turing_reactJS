@@ -7,7 +7,6 @@ import ImagesGallery from "./pages/ImagesGallery/ImagesGallery";
 class App extends React.Component {
 
     render() {
-        const isAdmin = true
         return (
             <>
                 <h1>APP JS</h1>

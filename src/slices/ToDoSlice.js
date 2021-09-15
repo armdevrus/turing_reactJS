@@ -4,7 +4,7 @@ import _ from "lodash"
 export const ToDoSlice = createSlice({
     name: 'ToDo',
     initialState: {
-       list: [{id: 0, value:"First initial record from store"}],
+       list: [{id: 0, value:"First from STORE"}],
         newId: 1
     },
     reducers: {
