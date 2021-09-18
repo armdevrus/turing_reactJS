@@ -1,32 +1,13 @@
 import React from "react"
-import {Link, Route, Switch} from "react-router-dom";
 
-import ToDo from "./pages/ToDo/ToDo";
+import Task19react from "./homework/5week3day2part/Task19react";
 
 class App extends React.Component {
 
     render() {
-        const isAdmin  = true
         return (
            <>
-               <h1>APP JS</h1>
-               <div>
-                   <Link to="/">Open ToDo page</Link>
-               </div>
-               <div>
-                   <Link to="/test">Test page</Link>
-               </div>
-               <Switch>
-                   <Route path="/blocked_page">
-                       <h1>Blocked page!</h1>
-                   </Route>}
-                   <Route path="/test">
-                       <h1>Test page!</h1>
-                   </Route>
-                   <Route path="/">
-                       <ToDo/>
-                   </Route>
-               </Switch>
+              <Task19react/>
            </>
         )
     }
