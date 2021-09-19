@@ -1,13 +1,14 @@
 import React from "react"
-import Task20react from "./homework/6week1day/Task20react";
+// import Task20react from "./homework/tasks/Task20react";
+import Task21react from "./homework/Task21react";
 
 class App extends React.Component {
 
     render() {
         return (
-           <>
-               <Task20react/>
-           </>
+          <>
+              <Task21react/>
+          </>
         )
     }
 }
