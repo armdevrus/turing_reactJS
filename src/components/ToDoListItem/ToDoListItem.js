@@ -1,72 +1,74 @@
-import React from "react";
+import React from 'react'
 
-import styles from "../ToDoList/ToDoList.module.css";
-import Button from "../Button/Button";
-import {Avatar, IconButton, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText} from "@material-ui/core";
-import FolderIcon from "@material-ui/icons/Folder";
-import DeleteIcon from "@material-ui/icons/Delete";
-import EditIcon from "@material-ui/icons/Edit";
+import styles from '../ToDoList/ToDoList.module.css'
+import Button from '../Button/Button'
+import { Avatar, IconButton, ListItem,
+    ListItemAvatar, ListItemSecondaryAction, ListItemText, Input } from '@material-ui/core'
+import FolderIcon from '@material-ui/icons/Folder'
+import DeleteIcon from '@material-ui/icons/Delete'
+import EditIcon from '@material-ui/icons/Edit'
+import CancelIcon from '@material-ui/icons/Cancel';
+import SaveIcon from '@material-ui/icons/Save';
 
-const ToDoListItem = ({elem, onDelete, onSave}) => {
+const ToDoListItem = ({ elem, onDelete, onSave }) => {
 
-    const [isEditing, setIsEditing] = React.useState(false)
-    const [text, setText] = React.useState(elem.value)
+  const [isEditing, setIsEditing] = React.useState()
+  const [text, setText] = React.useState(elem.value)
 
-    const handleEditClick = () => {
-        setIsEditing(true)
-    }
+  const handleEditClick = () => {
+    setIsEditing(true)
+  }
 
-    const handleOnChangeValue = (event) => {
-        setText(event.target.value)
-    }
+  const handleOnChangeValue = (event) => {
+    setText(event.target.value)
+  }
 
-    const handleCancelClick = () => {
-        setIsEditing(false)
-        setText(elem.value)
-    }
+  const handleCancelClick = () => {
+    setIsEditing(false)
+    setText(elem.value)
+  }
 
-    const handleSaveClick = () => {
-        setIsEditing(false)
-        onSave(text)
-    }
+  const handleSaveClick = () => {
+    setIsEditing(false)
+    onSave(text)
+  }
 
-    return(
-        <>
-        {/*<li className={styles.toDoListItem}>*/}
-        {/*    {*/}
-        {/*        isEditing ?*/}
-        {/*           <>*/}
-        {/*               id: {elem.id}: <input value={text} onChange={handleOnChangeValue}/>*/}
-        {/*               <Button text="Cancel" isImportant={true} onClick={handleCancelClick}/>*/}
-        {/*               <Button text="Save" onClick={handleSaveClick}/>*/}
-        {/*           </>:*/}
-        {/*           <>*/}
-        {/*               <span className={styles.toDoListText}>id: {elem.id}: {elem.value}</span>*/}
-        {/*               <Button text="Delete" isImportant={true} onClick={onDelete}/>*/}
-        {/*               <Button text="Edit" isImportant={false} onClick={handleEditClick}/>*/}
-        {/*           </>*/}
-        {/*    }*/}
-        {/*</li>*/}
-            <ListItem>
-                <ListItemAvatar>
-                    <Avatar>
-                        <FolderIcon/>
-                    </Avatar>
-                </ListItemAvatar>
-                <ListItemText
+  return (
+    <>
+        <ListItem>
+            <ListItemAvatar>
+                <Avatar>
+                    <FolderIcon/>
+                </Avatar>
+            </ListItemAvatar>
+          {isEditing ?
+            <>
+                <Input value={text} onChange={handleOnChangeValue}/>
+                <ListItemSecondaryAction>
+                  <IconButton edge="end" aria-label="save" onClick={handleSaveClick}>
+                    <SaveIcon/>
+                  </IconButton>
+                    <IconButton edge="end" aria-label="cancel" onClick={handleCancelClick}>
+                        <CancelIcon/>
+                </IconButton>
+                </ListItemSecondaryAction>
+            </> :
+            <>
+                  <ListItemText
                     primary={elem.value}
                     secondary={elem.id}
-                />
-                <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete" onClick={onDelete}>
-                        <DeleteIcon/>
-                    </IconButton>
+                  />
+                  <ListItemSecondaryAction>
+                      <IconButton edge="end" aria-label="delete" onClick={onDelete}>
+                          <DeleteIcon/>
+                      </IconButton>
                     <IconButton edge="end" aria-label="edit" onClick={handleEditClick}>
-                        <EditIcon/>
+                      <EditIcon/>
                     </IconButton>
-                </ListItemSecondaryAction>
-            </ListItem>
+                  </ListItemSecondaryAction>
+            </>}
+        </ListItem>
         </>
-    )
-}
-export default ToDoListItem
+        )
+      }
+      export default ToDoListItem

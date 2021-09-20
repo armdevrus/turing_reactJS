@@ -30,19 +30,9 @@ const ToDoList = () => {
 
     return (
         <>
-            <h3>To Do List:</h3>
-            <ul className={styles.toDoList}>
-                {list.map(elem =>
-                    <ToDoListItem key={elem.id}
-                                  elem={elem}
-                                  onDelete={deleteElemToDoList(elem.id)}
-                                  onSave={saveElemToDoList(elem.id)}/>)}
-            </ul>
+            <Typography variant="h6">To Do List:</Typography>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
-                    <Typography variant="h6">
-                        Avatar with text and icon
-                    </Typography>
                     <div>
                         <List dense>
                             {list.map(elem => (

@@ -9,7 +9,7 @@ export const ToDoSlice = createSlice({
     },
     reducers: {
         deleteElem:(state, action) => {
-            state.value = state.list.filter(elem => elem.id !== action.payload)
+            state.list = state.list.filter(elem => elem.id !== action.payload)
         },
         addElem:(state, action) => {
             state.list = [...state.list, {id: state.newId++, value: action.payload}]

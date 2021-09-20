@@ -31,10 +31,6 @@ const HandleForm = ({onClick}) => {
                 <FormHelperText id="my-helper-text">This elem will be added to list</FormHelperText>
                 <Button variant="contained" color="primary" onClick={debounceOnChange}>Add elem</Button>
             </form>
-            {/*<form className={styles.addToDoForm}>*/}
-            {/*    <input className={styles.enterInput} name="todo" value={toDo} onChange={handleInputChange}/>*/}
-            {/*    <Button variant="contained" color="primary" onClick={debounceOnChange}>Add elem</Button>*/}
-            {/*</form>*/}
         </>
 
     )
