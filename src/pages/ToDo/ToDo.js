@@ -20,7 +20,6 @@ const ToDo = () => {
         <div className={styles.container}>
             <HandleForm onClick={addElemToList}/>
             <ToDoList/>
-            {/*<Button color="primary">Hello World</Button>*/}
         </div>
     )
 }

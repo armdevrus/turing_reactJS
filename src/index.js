@@ -5,7 +5,8 @@ import {Provider} from "react-redux";
 import {PersistGate} from "redux-persist/integration/react";
 
 import './index.css';
-import App from './App';
+// import App from './App';
+import ShowContext from './lifecoding/ShowContext'
 // import Optimisation from "./lifecoding/Optimisation";
 import reportWebVitals from './reportWebVitals';
 // import ListPrompt from "./homework/5week3day/5week3day";
@@ -24,7 +25,7 @@ ReactDOM.render(
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                 <BrowserRouter>
-                    <App/>
+                    <ShowContext/>
                 </BrowserRouter>
             </PersistGate>
         </Provider>
