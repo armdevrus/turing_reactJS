@@ -3,12 +3,11 @@ import React from "react";
 const AddOptionForm = () => {
 
     const [input, setInput] = React.useState('')
+    const [elements, setElements] = React.useState([])
+
     const handleOnChangeText = (event) => {
         setInput(event.target.value)
     }
-    // console.log(input)
-
-    const [elements, setElements] = React.useState([])
 
     const handleOnSubmitAddForm = (event) => {
         event.preventDefault()

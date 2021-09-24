@@ -3,13 +3,12 @@ import React from "react";
 const AddText = () => {
 
     const [element, setElement] = React.useState("")
+    const [valueText, setValueText] = React.useState("")
 
     const handleOnChangeElement = (event) => {
         setElement(event.target.value)
         console.log(event)
     }
-
-    const [valueText, setValueText] = React.useState("")
 
     const handleAddText = () => {
         setValueText(element)
