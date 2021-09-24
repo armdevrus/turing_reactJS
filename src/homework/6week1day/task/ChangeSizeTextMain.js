@@ -1,19 +1,18 @@
 import React from "react";
-import ChangeSizeTextClass from "./ChangeSizeTextClass";
+// import ChangeSizeTextClass from "./ChangeSizeTextClass";
+import ChangeSizeText from "./ChangeSizeText";
 
-class ChangeSizeTextMain extends React.Component {
+const ChangeSizeTextMain = ({itemProp, text}) => {
 
-    arrayClass = [100, 200, 300]
+    const arrayClass = [100, 200, 300]
 
-    render() {
-        const text = ''
-        return(
-            <>
-                {/*{this.arrayClass.map()}*/}
-                <ChangeSizeTextClass/>
-            </>
-        )
-    }
+    return (
+        <>
+            {arrayClass.map(item => <ChangeSizeText
+                item={itemProp}
+                text={text}/>)}
+        </>
+    )
 }
 
 export default ChangeSizeTextMain

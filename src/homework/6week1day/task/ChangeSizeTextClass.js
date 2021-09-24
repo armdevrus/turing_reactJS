@@ -4,7 +4,6 @@ class ChangeSizeTextClass extends React.Component {
 
     refComp = React.createRef()
 
-
     state = {
         firstSize: ""
     }
