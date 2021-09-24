@@ -1,16 +1,27 @@
-import React from "react"
-// import Task20react from "./homework/tasks/Task20react";
-import Task21react from "./homework/Task21react";
+import React from "react";
+import {useEffect, useState} from 'react'
 
-class App extends React.Component {
+const App = () => {
+    // Обязательно нужно создать стэйт
+    const [todo, setTodo] = useState([])
 
-    render() {
-        return (
-          <>
-              <Task21react/>
-          </>
-        )
+    // Функция, которая загружает todo list
+    const loadTodo = () => {
+        // Напишите код, который загружает данные с сервера
     }
+
+    // Поскольку загрузка - побочный эффект, загрузку выполняем
+    // в useEffect
+    useEffect(() => {
+        loadTodo();
+    }, [])
+
+
+    return (
+        <>
+        </>
+        // Напишите функцию рендера
+    )
 }
 
 export default App
