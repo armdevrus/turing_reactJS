@@ -1,0 +1,19 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+    background: cadetblue;
+    color: #fff;
+    text-align: center;
+}
+caption{
+    background: lightblue;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: "Bebas Neue";
+    height: 40px;
+    padding-top: 15px;
+}
