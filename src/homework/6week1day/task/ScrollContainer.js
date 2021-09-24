@@ -4,12 +4,8 @@ const ScrollContainer = () => {
 
     const refCompScroll = React.useRef(null)
 
-    React.useEffect(() => {
-        console.log(refCompScroll)
-    })
-
     const handleOnClickScrollDown = () => {
-        window.scrollTo(0, refCompScroll.current.offsetHeight)
+        refCompScroll.current.scrollIntoView({block: 'end'})
     }
 
     return (

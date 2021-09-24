@@ -5,8 +5,6 @@ const RefCompInputButton = () => {
 
     const refComp = React.useRef(null)
 
-    // React.useEffect()
-
     const handleOnClickSelectButton = (event) => {
         refComp.current.focus()
     }

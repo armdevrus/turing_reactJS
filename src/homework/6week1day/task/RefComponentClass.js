@@ -6,8 +6,6 @@ class RefClassComponent extends React.Component {
     refComp2 = React.createRef()
 
     componentDidMount() {
-        console.log(this.refComp1)
-        console.log(this.refComp1.current.clientWidth)
         this.refComp1.current.focus()
     }
 

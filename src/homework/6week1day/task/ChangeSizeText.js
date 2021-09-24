@@ -7,7 +7,6 @@ const ChangeSizeText = () => {
     const [firstSize, setFirstSize] = React.useState(0)
 
     React.useEffect(() => {
-        // console.log(refComp)
         if (refComp.current.clientHeight === 100) {
             setFirstSize(10)
         } else if (refComp.current.clientHeight === 200) {
@@ -15,7 +14,6 @@ const ChangeSizeText = () => {
         } else if (refComp.current.clientHeight === 300) {
             setFirstSize(30)
         }
-        console.log(firstSize)
     }, [])
 
     return (
