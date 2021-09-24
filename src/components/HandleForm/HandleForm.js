@@ -25,7 +25,7 @@ const HandleForm = ({onClick}) => {
 
     return (
         <>
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={handleFormSubmit} className={styles.form}>
                 <InputLabel htmlFor="my-input">To Do Elem</InputLabel>
                 <Input id="my-input" aria-describedby="my-helper-text" value={toDo} onChange={handleInputChange}/>
                 <FormHelperText id="my-helper-text">This elem will be added to list</FormHelperText>

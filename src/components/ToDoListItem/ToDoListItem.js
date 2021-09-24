@@ -1,7 +1,7 @@
 import React from 'react'
 
-import styles from '../ToDoList/ToDoList.module.css'
-import Button from '../Button/Button'
+// import styles from '../ToDoList/ToDoList.module.css'
+// import Button from '../Button/Button'
 import { Avatar, IconButton, ListItem,
     ListItemAvatar, ListItemSecondaryAction, ListItemText, Input } from '@material-ui/core'
 import FolderIcon from '@material-ui/icons/Folder'
