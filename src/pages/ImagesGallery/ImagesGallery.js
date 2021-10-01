@@ -40,6 +40,7 @@ const ImagesGallery = () => {
   const [currentPage, setCurrentPage] = React.useState(1)
 
   const getImages = async (query = 'cat', page = 1) => {
+
     setCurrentQuery(query)
     const url = `${BASE_URL}?key=${API_KEY}&q=${query}&per_page=${PER_PAGE}&page=${page}`
 

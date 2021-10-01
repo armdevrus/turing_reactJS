@@ -12,7 +12,8 @@ import EditIcon from '@material-ui/icons/Edit'
 
 import styles from './ToDoList.module.css'
 import ToDoListItem from '../ToDoListItem/ToDoListItem'
-import { deleteElem, updateElem } from '../../slices/ToDoSlice'
+import { deleteElem, updateElem, fill } from '../../slices/ToDoSlice'
+import { BASE_URL } from '../../utils/constJs'
 
 const ToDoList = () => {
 
@@ -20,13 +21,42 @@ const ToDoList = () => {
 
   const list = useSelector((state) => state.ToDo.list)
 
-  const deleteElemToDoList = (id) => () => {
-    dispatch(deleteElem(id))
+  const deleteElemToDoList = (id) => async () => {
+   const result = await deleteElemFromServer(id)
+    if (result){
+      dispatch(deleteElem(id))
+    }
+  }
+
+  const deleteElemFromServer = async (id)=> {
+    const response = await fetch(`${BASE_URL}/records/${id}`,{
+      method: 'DELETE'
+    })
+    // console.log({response})
+    if (response.ok){
+      // const result = await response.json()
+      // console.log({result})
+      return true
+    }
+    return false
   }
 
   const saveElemToDoList = (id) => (text) => {
     dispatch(updateElem({ id: id, value: text }))
   }
+
+  const getRecords = async () => {
+    const response = await fetch(`${ BASE_URL }/records`)
+    if (response.ok) {
+      const result = await response.json()
+      console.log({result})
+      dispatch(fill(result))
+    }
+  }
+
+  React.useEffect(() => {
+    getRecords()
+  },[])
 
   return (
     <>

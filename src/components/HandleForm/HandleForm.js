@@ -4,13 +4,37 @@ import {Button, Input, InputLabel, FormHelperText} from "@material-ui/core"
 
 import styles from "./HandleForm.module.css"
 import ButtonOur from "../Button/Button";
+import { useDispatch } from 'react-redux'
+import { addElem } from '../../slices/ToDoSlice'
+import {BASE_URL} from '../../utils/constJs'
 
-const HandleForm = ({onClick}) => {
+// const HandleForm = ({onClick}) => {
+const HandleForm = () => {
+
+    const dispatch = useDispatch()
+
+    const addElemToList = async (elem) => {
+       const elemFromServer = await addElemToBackend(elem)
+        dispatch(addElem(elemFromServer))
+    }
+
+    const addElemToBackend = async (elem) => {
+        const response = await fetch(`${BASE_URL}/records`, {
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({value: elem})
+        })
+        if(response.ok){
+            return await response.json()
+        }
+    }
 
     const [toDo, setToDo] = React.useState(``)
 
     const debounceOnChange = _.debounce(() => {
-        onClick(toDo)
+        addElemToList(toDo)
         setToDo('')
     }, 500)
 
