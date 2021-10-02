@@ -18,13 +18,13 @@ const HandleForm = () => {
         dispatch(addElem(elemFromServer))
     }
 
-    const addElemToBackend = async (elem) => {
+    const addElemToBackend = async (elemStr) => {
         const response = await fetch(`${BASE_URL}/records`, {
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({value: elem})
+            body: JSON.stringify({value: elemStr})
         })
         if(response.ok){
             return await response.json()

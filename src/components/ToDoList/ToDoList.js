@@ -22,41 +22,55 @@ const ToDoList = () => {
   const list = useSelector((state) => state.ToDo.list)
 
   const deleteElemToDoList = (id) => async () => {
-   const result = await deleteElemFromServer(id)
-    if (result){
+    const result = await deleteElemFromServer(id)
+    if (result) {
       dispatch(deleteElem(id))
     }
   }
 
-  const deleteElemFromServer = async (id)=> {
-    const response = await fetch(`${BASE_URL}/records/${id}`,{
+  const deleteElemFromServer = async (id) => {
+    const response = await fetch(`${BASE_URL}/records/${id}`, {
       method: 'DELETE'
     })
-    // console.log({response})
-    if (response.ok){
-      // const result = await response.json()
-      // console.log({result})
+    if (response.ok) {
       return true
     }
     return false
   }
 
-  const saveElemToDoList = (id) => (text) => {
-    dispatch(updateElem({ id: id, value: text }))
+  const saveElemToDoList = (id) => async (text) => {
+    const result = await updateElementBackend({ id: id, value: text })
+    if(result){
+      dispatch(updateElem({ id: id, value: text }))
+    }
+  }
+
+  const updateElementBackend = async (elem) => {
+    const response = await fetch(`${BASE_URL}/records`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(elem)
+    })
+    if (response.ok){
+      return true
+    }
+    return false
   }
 
   const getRecords = async () => {
-    const response = await fetch(`${ BASE_URL }/records`)
+    const response = await fetch(`${BASE_URL}/records`)
     if (response.ok) {
       const result = await response.json()
-      console.log({result})
+      console.log({ result })
       dispatch(fill(result))
     }
   }
 
   React.useEffect(() => {
     getRecords()
-  },[])
+  }, [])
 
   return (
     <>
